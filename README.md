@@ -14,8 +14,6 @@
 
 ![演示](assets/README/image.png)
 
-## 中文介绍
-
 ESP-SR-Model-Tool 是一个易于使用的ESP32语音识别模型配置工具，可以帮助您快速选择、生成和烧写各种唤醒词模型到您的ESP32设备。无需手动配置复杂的参数，只需几个简单的步骤即可完成唤醒词的部署。
 
 ### ✨ 功能特点
@@ -42,8 +40,6 @@ cd esp-sr-model-tool
 # 安装依赖
 pip install -r requirements.txt
 
-# 运行
-python main.py
 ```
 
 您还需要：
@@ -54,13 +50,10 @@ python main.py
 
 ### 🚀 使用方法
 
-#### 交互式使用（推荐）
-
 1. 确保您的ESP32已通过USB连接到电脑
 2. 运行以下命令启动工具：
 
 ```bash
-cd wake-word-tool
 python main.py
 ```
 
@@ -72,7 +65,37 @@ python main.py
    - 选择串口设备
    - 等待模型生成和烧写完成
 
-#### 使用效果
+### ⚠️ 注意
+
+> 当你用PlatfromIO开发 可使用platform: `platform-espressif32.zip` 本压缩包已经修复其中的唤醒词硬编码（`hiesp`） // 不改变则不会替换唤醒词模型，`MN...`模型同理
+
+<details>
+   <summary>
+   platformio.ini 文件参考
+   </summary>
+
+```ini
+[env:slef-esp32-s3]
+platform = <xxxx/platform-espressif32.zip>
+board = esp32-s3-devkitc-1
+framework = arduino
+; lib_ldf_mode = deep+
+monitor_speed = 115200
+# 此处为含有model分区的分区表文件
+board_build.arduino.partitions = esp-sr.csv
+board_build.f_cpu = 240000000L
+board_build.arduino.memory_type = qio_opi
+board_upload.flash_size = 16MB
+build_flags =
+ -DBOARD_HAS_PSRAM
+ -DCONFIG_USE_WAKENET
+```
+
+</details>
+
+#### 🖼️ 使用效果
+
+> 请确保您的ESP32设备已烧写了最新固件，并连接到电脑上。
 
 ![选择唤醒词](assets/README/image-1.png)
 ![选择TTS模型](assets/README/image-2.png)

@@ -15,8 +15,6 @@ English | [中文](./README.md)
 
 ![Demo](assets/README/image.png)
 
-## English Introduction
-
 ESP-SR-Model-Tool is an easy-to-use ESP32 speech recognition model configuration tool that helps you quickly select, generate, and flash various wake word models to your ESP32 device. No need to manually configure complex parameters, just a few simple steps to complete the deployment of wake words.
 
 ### ✨ Features
