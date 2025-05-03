@@ -100,6 +100,10 @@ build_flags =
 ![选择唤醒词](assets/README/image-1.png)
 ![选择TTS模型](assets/README/image-2.png)
 
+#### 🖼️ 若你也是基于Arduino进行ESP-SR的开发
+
+可参考`Xu Jiwei`：<https://xujiwei.com/blog/2025/04/esp32-arduino-esp-sr-tts> 的博客文章，也感谢作者的分享。
+
 #### 命令行参数使用
 
 高级用户可以通过命令行参数直接指定配置，无需交互式选择：
@@ -208,8 +212,10 @@ voice_data,data,fat,0xCF0000,0x300000
 4. 推送到分支 (`git push origin feature/amazing-feature`)
 5. 开启一个 Pull Request
 
+### 🙏 鸣谢
+
+- [Xu Jiwei的博客](https://xujiwei.com/blog/2025/04/esp32-arduino-esp-sr-tts) - 复刻小智AI，ESP32-S3搭建Arduino+ESP-SR+ESP-TTS开发环境踩坑记录
+
 ### 📜 许可证
 
 本项目采用 Apache License 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件
-
----
